@@ -1,6 +1,7 @@
 import React from 'react';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { Dashboard } from './pages/Dashboard';
+import { TransportadorDashboard } from './pages/TransportadorDashboard';
 import { AuthPage } from './pages/AuthPage';
 
 const AppContent: React.FC = () => {
@@ -21,6 +22,11 @@ const AppContent: React.FC = () => {
     return <AuthPage />;
   }
 
+  // Renderizar dashboard específico baseado no tipo de usuário
+  if (user.type === 'transportador' || user.type === 'transportadora') {
+    return <TransportadorDashboard />;
+  }
+  
   return <Dashboard />;
 };
 
