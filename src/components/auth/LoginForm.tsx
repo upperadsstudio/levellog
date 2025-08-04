@@ -101,6 +101,17 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onToggleForm }) => {
               Cadastre-se
             </button>
           </p>
+          
+          {/* Demonstração - Emails de teste */}
+          <div className="mt-4 p-3 bg-blue-50 rounded-lg text-left">
+            <p className="text-xs font-medium text-blue-900 mb-2">🎯 Para demonstração, use:</p>
+            <div className="space-y-1 text-xs text-blue-800">
+              <p><strong>Embarcador:</strong> embarcador@teste.com</p>
+              <p><strong>Transportador:</strong> transportador@teste.com</p>
+              <p><strong>Transportadora:</strong> transportadora@teste.com</p>
+              <p className="text-blue-600 mt-1">Senha: qualquer uma</p>
+            </div>
+          </div>
         </div>
       </CardContent>
     </Card>

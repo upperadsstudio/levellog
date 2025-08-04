@@ -194,6 +194,16 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({ onToggleForm }) => {
               Faça login
             </button>
           </p>
+          
+          {/* Demonstração - Informação sobre tipos */}
+          <div className="mt-4 p-3 bg-green-50 rounded-lg text-left">
+            <p className="text-xs font-medium text-green-900 mb-2">💡 Tipos de usuário:</p>
+            <div className="space-y-1 text-xs text-green-800">
+              <p><strong>Embarcador:</strong> Quem tem cargas para transportar</p>
+              <p><strong>Transportador:</strong> Motorista autônomo</p>
+              <p><strong>Transportadora:</strong> Empresa com frota</p>
+            </div>
+          </div>
         </div>
       </CardContent>
     </Card>

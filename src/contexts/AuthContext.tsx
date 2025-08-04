@@ -52,16 +52,41 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       // Simulação de login - em produção seria uma chamada à API
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Mock user data
+      // Determinar tipo de usuário baseado no email para demonstração
+      let userType: 'embarcador' | 'transportador' | 'transportadora' = 'embarcador';
+      let userName = 'João Silva';
+      let userPhone = '(11) 99999-9999';
+      let userDocument = '123.456.789-00';
+      let userRating = 4.8;
+      let userTotalRatings = 127;
+      
+      // Emails específicos para diferentes tipos de usuário
+      if (email.includes('transportador') || email.includes('motorista') || email.includes('carlos')) {
+        userType = 'transportador';
+        userName = 'Carlos Mendes';
+        userPhone = '(11) 98888-8888';
+        userDocument = '123.456.789-00';
+        userRating = 4.9;
+        userTotalRatings = 98;
+      } else if (email.includes('transportadora') || email.includes('frota') || email.includes('maria')) {
+        userType = 'transportadora';
+        userName = 'Maria Santos - Transportes Santos';
+        userPhone = '(11) 97777-7777';
+        userDocument = '12.345.678/0001-90';
+        userRating = 4.7;
+        userTotalRatings = 156;
+      }
+
+      // Mock user data baseado no tipo
       const mockUser: User = {
-        id: '1',
-        name: 'João Silva',
+        id: userType === 'embarcador' ? '1' : userType === 'transportador' ? '2' : '3',
+        name: userName,
         email: email,
-        phone: '(11) 99999-9999',
-        document: '123.456.789-00',
-        type: 'embarcador',
-        rating: 4.8,
-        totalRatings: 127,
+        phone: userPhone,
+        document: userDocument,
+        type: userType,
+        rating: userRating,
+        totalRatings: userTotalRatings,
         profileComplete: true,
         createdAt: new Date(),
       };
